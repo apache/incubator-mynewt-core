@@ -17,20 +17,29 @@
 # under the License.
 #
 
-pkg.name: hw/bsp/dialog_da1469x-dk-pro
-pkg.type: bsp
-pkg.description: BSP definition for the Dialog DA1469x PRO development kit with DA14699 daughter board.
-pkg.author: "Apache Mynewt <dev@mynewt.apache.org>"
-pkg.homepage: "http://mynewt.apache.org/"
-pkg.keywords:
-    - dialog
-    - da1469x
-
-pkg.cflags.HARDFLOAT:
-    - '-mfloat-abi=hard'
-    - '-mfpu=fpv5-sp-d16'
-
-pkg.deps:
-    - "@apache-mynewt-core/libc/baselibc"
-    - "@apache-mynewt-core/hw/bsp/dialog_common"
-    - "@apache-mynewt-core/hw/mcu/dialog/da14699"
+syscfg.vals:
+    MCU_TARGET: DA14695
+    MCU_DCDC_ENABLE: 1
+    # Setting for QSPI Flash
+    QSPI_FLASH_ADDRESS_LENGTH: 24
+    QSPI_FLASH_SECTOR_SIZE: 4096
+    QSPI_FLASH_SECTOR_COUNT: 256
+    QSPI_FLASH_PAGE_SIZE: 256
+    QSPI_FLASH_CMD_QUAD_INPUT_PAGE_PROGRAM: 0x32
+    # Set default pins for peripherals
+    UART_0_PIN_TX: 9
+    UART_0_PIN_RX: 8
+    UART_1_PIN_TX: 9
+    UART_1_PIN_RX: 8
+    UART_1_PIN_RTS: 32
+    UART_1_PIN_CTS: 7
+    I2C_0_PIN_SCL: 29
+    I2C_0_PIN_SDA: 28
+    SPI_0_MASTER_PIN_SCK: 27
+    SPI_0_MASTER_PIN_MOSI: 24
+    SPI_0_MASTER_PIN_MISO: 26
+    # Configure flash areas
+    CONFIG_FCB_FLASH_AREA: FLASH_AREA_NFFS
+    REBOOT_LOG_FLASH_AREA: FLASH_AREA_REBOOT_LOG
+    NFFS_FLASH_AREA: FLASH_AREA_NFFS
+    COREDUMP_FLASH_AREA: FLASH_AREA_IMAGE_1 

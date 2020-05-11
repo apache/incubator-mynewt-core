@@ -16,15 +16,14 @@
 # specific language governing permissions and limitations
 # under the License.
 #
-
-pkg.name: hw/bsp/dialog_da1469x-dk-pro
+pkg.name: hw/bsp/dialog_da14695-dk-usb
 pkg.type: bsp
-pkg.description: BSP definition for the Dialog DA1469x PRO development kit with DA14699 daughter board.
+pkg.description: BSP definition for the Dialog DA14695 USB development kit.
 pkg.author: "Apache Mynewt <dev@mynewt.apache.org>"
 pkg.homepage: "http://mynewt.apache.org/"
 pkg.keywords:
     - dialog
-    - da1469x
+    - da14695
 
 pkg.cflags.HARDFLOAT:
     - '-mfloat-abi=hard'
@@ -33,4 +32,4 @@ pkg.cflags.HARDFLOAT:
 pkg.deps:
     - "@apache-mynewt-core/libc/baselibc"
     - "@apache-mynewt-core/hw/bsp/dialog_common"
-    - "@apache-mynewt-core/hw/mcu/dialog/da14699"
+    - "@apache-mynewt-core/hw/mcu/dialog/da14695"

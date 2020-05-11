@@ -28,15 +28,15 @@ bsp.debugscript.WINDOWS.OVERWRITE:
     "hw/bsp/dialog_common/dialog_da1469x-dk_debug.cmd"
 
 bsp.linkerscript:
-    - "hw/bsp/dialog_da1469x-dk-pro/da1469x.ld"
+    - "hw/bsp/dialog_da14695-dk-usb/da1469x.ld"
     - "hw/mcu/dialog/da1469x/da1469x.ld"
 
 bsp.linkerscript.BOOT_LOADER.OVERWRITE:
-    - "hw/bsp/dialog_da1469x-dk-pro/boot-da1469x.ld"
+    - "hw/bsp/dialog_da14695-dk-usb/boot-da14695.ld"
     - "hw/mcu/dialog/da1469x/da1469x.ld"
 
 bsp.linkerscript.RAM_RESIDENT.OVERWRITE:
-    - "hw/bsp/dialog_da1469x-dk-pro/boot-da1469x.ld"
+    - "hw/bsp/dialog_da14695-dk-usb/boot-da14695.ld"
     - "hw/mcu/dialog/da1469x/da1469x_ram_resident.ld"
 
 bsp.flash_map:
